@@ -1,0 +1,332 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #71c5fd, #e6f7ff);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Main App Container Layout --- */
+.form-container {
+    display: flex;
+    width: 90%;
+    max-width: 1400px;
+    height: 90vh;
+    max-height: 850px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* --- Sidebar Styles --- */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e5e7eb;
+}
+
+.sidebar-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.sidebar-header .logo .fa-water {
+    font-size: 2rem;
+    color: #3b82f6;
+}
+
+.sidebar-header .logo div {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header .logo strong {
+    font-size: 1rem;
+    color: #1f2937;
+}
+
+.sidebar-header .logo span {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Pushes footer to the bottom */
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #6b7280;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-nav li a:hover {
+    background-color: #f3f4f6;
+}
+
+.sidebar-nav li.active a {
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+
+.sidebar-footer {
+    background-color: #10b981;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.sidebar-footer strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-footer span {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+
+/* --- Main Content Area Styles --- */
+.main-content {
+    flex-grow: 1;
+    padding: 2rem 4rem;
+    overflow-y: auto; /* Allows scrolling if content is long */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    color: #111827;
+}
+
+.main-header span {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    width: 33.33%;
+    height: 100%;
+    background-color: #3b82f6;
+    border-radius: 4px;
+}
+
+/* --- Form Card Styles --- */
+.form-card {
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 3rem;
+    max-width: 700px;
+    margin: 2rem auto; /* Center the card */
+    text-align: center;
+}
+
+.form-icon-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem auto;
+}
+
+
+.fa-tint, .fa-map-marker-alt {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.fa-tint {
+    top: 0;
+    font-size: 1.5rem;
+    color: #60a5fa;
+}
+.fa-map-marker-alt {
+    bottom: 0;
+    font-size: 3.5rem;
+    color: #10b981;
+}
+
+
+.form-card h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: #111827;
+}
+
+.form-card p {
+    margin: 0 0 2rem 0;
+    color: #6b7280;
+}
+
+/* --- Form Element Styles --- */
+.assessment-form {
+    text-align: left;
+}
+.form-column {
+    margin-bottom: 1.5rem;
+}
+.form-column label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-column input,
+.form-column textarea,
+.form-column select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* Important for consistent sizing */
+}
+.form-column input::placeholder,
+.form-column textarea::placeholder {
+    color: #9ca3af;
+}
+
+.form-column input:focus,
+.form-column textarea:focus,
+.form-column select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px #bfdbfe;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+.form-row .form-column {
+    flex: 1; 
+}
+
+.next-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.next-button:hover {
+    background-color: #2563eb;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .form-container {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        overflow: visible;
+        box-shadow: none;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+    }
+    .sidebar-header .logo {
+        margin-bottom: 0;
+    }
+    .sidebar-nav {
+        display: none; /* Hide for a cleaner mobile header */
+    }
+    .sidebar-footer {
+        display: none; /* Hide for a cleaner mobile header */
+    }
+    .main-content {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        border-radius: 0;
+    }
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .form-card {
+        padding: 2rem 1.5rem;
+        margin-top: 1rem;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-column {
+        margin-bottom: 1rem;
+    }
+    .form-card h2 {
+        font-size: 1.25rem;
+    }
+    .form-card p {
+        font-size: 0.9rem;
+    }
+    .next-button {
+        font-size: 0.95rem;
+    }
+    .sidebar {
+        padding: 1rem;
+    }
+    .sidebar-header .logo strong {
+        font-size: 0.9rem;
+    }
+    .sidebar-header .logo span {
+        font-size: 0.7rem;
+    }
+}

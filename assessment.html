@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTRWH ASSESSMENT</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-water"></i>
+                    <div>
+                        <strong>RTRWH Assessment</strong>
+                        <span>Central Ground Water Board</span>
+                    </div>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="active"><a href="#"><i class="fas fa-file-alt"></i> Assessment</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> My Reports</a></li>
+                <li><a href="#"><i class="fas fa-book-open"></i> Learn RTRWH</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <strong>TEAM DHYEYA</strong>
+                
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>RTRWH Assessment</h1>
+                <span>Step 1 of 3</span>
+            </header>
+
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+
+            <div class="form-card">
+                <div class="form-icon-container">
+                    <i class="fas fa-tint water-drop-icon"></i>
+                    <i class="fas fa-map-marker-alt location-pin-icon"></i>
+                </div>
+                <h2>Location Details</h2>
+                <p>Specify the details </p>
+
+                <form class="assessment-form">
+                    <div class="form-column">
+                        <label for="your-name">Your Name *</label>
+                        <input type="text" id="your-name" placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-column">
+                        <label for="property-address">Address </label> 
+                        <textarea id="property-address" rows="4" placeholder="Enter complete address with landmarks"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="state">State </label>
+                            <select id="state">
+                                <option>Select your state</option>
+                                <option value="maharashtra">Maharashtra</option>
+                                <option value="MadhyaPradesh">Madhya Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Kerala">Kerala</option>
+
+                            </select>
+                        </div>
+                        <div class="form-column">
+                            <label for="district">District </label>
+                            <select id="district">
+                                <option value="" disabled selected>Select your district</option>
+                                <option value="pune">Pune</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="nagpur">Nagpur</option>
+                                <option value="nashik">Nashik</option>
+                                <option value="jorhat">Jorhat</option>
+                                <option value="bhopal">Bhopal</option>
+                                <option value="indore">Indore</option>
+                                <option value="guwahati">Guwahati</option>
+                                <option value="amritsar">Amritsar</option>
+                                <option value="ludhiana">Ludhiana</option>
+                                <option value="chandigarh">Chandigarh</option>
+                                <option value="thiruvananthapuram">Thiruvananthapuram</option>
+                                <option value="kochi">Kochi</option>
+                                <option value="kollam">Kollam</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="next-button">Next Step</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

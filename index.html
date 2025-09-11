@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTRWH Smart Harvest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif; /* Using Poppins font */
+        }
+        body, html {
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* === Sidebar === */
+        .sidebar {
+            width: 260px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #e5e7eb;
+            padding: 20px;
+        }
+
+        /* Logo at the top of the sidebar */
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 10px 30px 10px; /* Adjusted padding */
+        }
+        .sidebar-logo i {
+            font-size: 28px;
+            color: #0284c7; /* Blue color for the icon */
+        }
+        .sidebar-logo .name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Navigation */
+        .nav-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #6b7280;
+            padding: 15px 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav ul {
+            list-style: none;
+            flex-grow: 1; /* Pushes user info to the bottom */
+        }
+        nav li a {
+            padding: 12px 15px;
+            margin-bottom: 5px; /* Space between nav items */
+            font-size: 15px;
+            color: #374151;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav li a i {
+            margin-right: 12px;
+            font-size: 16px;
+            width: 20px; /* Aligns icons nicely */
+            text-align: center;
+        }
+        nav li.active a {
+            background-color: #e0f2fe; /* Light blue background for active link */
+            color: #0284c7; /* Darker blue text for active link */
+        }
+        nav li a:hover {
+            background-color: #f0f9ff;
+        }
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* User Info Section */
+        .user-info {
+            background-color: #0284c7; /* Solid blue background */
+            color: #fff;
+            text-align: left; /* Text aligned left */
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .user-name {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .user-role {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        /* === Main Content === */
+        .content {
+            flex: 1;
+            /* New blue-to-green gradient */
+            background: linear-gradient(135deg, #0284c7, #10b981);
+            padding: 40px;
+            color: #fff;
+            /* Centering the content */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .main-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.15); /* Translucent white */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        .main-icon i {
+            font-size: 24px;
+        }
+        .content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            max-width: 600px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .content p {
+            max-width: 650px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .cta-buttons {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Space between buttons */
+        }
+        .btn {
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background-color: #fff;
+            color: #0284c7; /* Blue text */
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+        }
+        .btn-secondary:hover {
+             text-decoration: underline;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+                min-height: 100vh;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 10px;
+            }
+            .sidebar-nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .sidebar-logo, .user-info {
+                display: none;
+            }
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding-top: 10px;
+            }
+            nav li a {
+                padding: 8px 12px;
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+            nav li a i {
+                display: none;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .content h1 {
+                font-size: 2rem;
+            }
+            .content p {
+                font-size: 1rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-nav">
+                <div class="sidebar-logo">
+                    <i class="fa-solid fa-droplet"></i>
+                    <div class="name">RTRWH SMART HARVEST</div>
+                </div>
+
+                <nav>
+                    <p class="nav-title">NAVIGATION</p>
+                    <ul>
+                        <li class="active"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="D:\sih2k25\assessment.html"><i class="fa fa-file-alt"></i> Assessment</a></li>
+                        <li><a href="#"><i class="fa fa-chart-bar"></i> My Reports</a></li>
+                        <li><a href="#"><i class="fa fa-book"></i> Learn RTRWH</a></li>
+                    </ul>
+                </nav>
+
+                <div class="user-info">
+                    <p class="user-name">Dhyeya Team</p>
+                    <p class="user-role">Administrator</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="main-icon">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+            <h1>Harvest Every Drop of Precious Rainwater</h1>
+            <p>
+                Assess your rooftop rainwater harvesting potential instantly. Get personalized recommendations from India's groundwater experts at Central Ground Water Board.
+            </p>
+            <div class="cta-buttons">
+                <a href="assessment.html" class="btn btn-primary">Assessment</a>
+                <a href="#" class="btn btn-secondary">Learn More</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
